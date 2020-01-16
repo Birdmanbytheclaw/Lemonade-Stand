@@ -27,8 +27,28 @@ namespace LemonadeStand
             cups.Clear();
         }
 
+        public void AddLemonToLemonsList()
+        {
+            lemons.Add(new Lemon());
+        }
 
-    
+        public void AddSugarCubeToSugarCubesList()
+        {
+            sugarCubes.Add(new SugarCube());
+        }
+
+        public void AddIceCubesToIceCubesList()
+        {
+            iceCubes.Add(new IceCube());
+        }
+
+        public void AddCupToCupsList()
+        {
+            cups.Add(new Cup());
+        }
+
+
+
     }
 
 
