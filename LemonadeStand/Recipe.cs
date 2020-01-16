@@ -19,7 +19,7 @@ namespace LemonadeStand
             pricePerCup = .25;
         }
 
-        public void PitchRecipe()
+        public void PitcherRecipe()
         {
             Console.WriteLine($"{amountOfLemons} Lemons, {amountOfSugarCubes} Sugar Cubes, {amountOfIceCubes} Ice Cubes, eqaul 1 Pitcher.");
         }

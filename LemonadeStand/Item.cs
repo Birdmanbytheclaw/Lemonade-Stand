@@ -6,11 +6,11 @@ namespace LemonadeStand
 {
     public abstract class Item
     {
-        string name;
+        public string name;
 
-        public Item()
+        public Item(string name)
         {
-            
+            this.name = name;
         }
     }
 }
