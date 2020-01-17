@@ -8,9 +8,9 @@ namespace LemonadeStand
     {
         public string name;
 
-        public Item(string name)
+        public Item()
         {
-            this.name = name;
+            
         }
     }
 }

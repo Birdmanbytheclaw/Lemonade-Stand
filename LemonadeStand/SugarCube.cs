@@ -6,6 +6,8 @@ namespace LemonadeStand
 {
     public class SugarCube : Item
     {
+        
+
         public SugarCube()
         {
 
