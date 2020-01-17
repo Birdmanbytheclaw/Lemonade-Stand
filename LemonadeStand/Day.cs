@@ -12,11 +12,11 @@ namespace LemonadeStand
         public double dayEarnings;
         public double dayProfit;
 
-        public Day() 
+        public Day(int day) 
         {
             day = 1;
             weather = new Weather();
-            Customer = new List<Customer>();
+            customers = new List<Customer>();
            
         }
 
