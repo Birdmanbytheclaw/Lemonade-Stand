@@ -9,5 +9,12 @@ namespace LemonadeStand
         private Player player;
         private List<Day> days;
         private int currentDay;
+
+        public Game()
+        {
+            days = new List<Day>() {new Day(1) };
+            
+        }
+
     }
 }

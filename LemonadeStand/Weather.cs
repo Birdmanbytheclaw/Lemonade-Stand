@@ -9,7 +9,7 @@ namespace LemonadeStand
         public string condition;
         public int temperature;
         private List<string> weatherConditions;
-        public string predictedForecast;
+        public List<string> Forecast;
 
         public Weather()
         {
@@ -17,31 +17,22 @@ namespace LemonadeStand
 
         }
 
+        public void ChooseCondition()
+        {
+            Random PickCondition = new Random();
+            condition = weatherConditions[PickCondition.Next(1,5)];
+            Console.WriteLine(condition);
+        }
 
         public int GetTempurature(Random Rnd)
         {
-            int temperature = Rnd.Next(1, 5);
-
-            switch (temperature)
-            {
-                case 1:
-                    this.temperature = 90;
-                    break;
-                case 2:
-                    this.temperature = 80;
-                    break;
-                case 3:
-                    this.temperature = 70;
-                    break;
-                case 4:
-                    this.temperature = 60;
-                    break;
-                default:
-                    Console.WriteLine("Crazy weather, Cannot find report");
-                    break;
-            }
+            temperature = Rnd.Next(60, 90);
             return temperature;
         }
+     /* public string PredictedForecast()
+        {
+            Forecast = new List<string>() { };
+        }*/
             
     }
 }
