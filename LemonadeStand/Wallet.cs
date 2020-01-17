@@ -9,9 +9,9 @@ namespace LemonadeStand
         private double money = 0.00;
         public double Money;
 
-        public Wallet(double Money)
+        public Wallet()
         {
-            this.Money = Money;
+            Money = 20.00;
         }
 
         //For checing balance while making purchases in store --- Will most likely ajust if statement check at a later time

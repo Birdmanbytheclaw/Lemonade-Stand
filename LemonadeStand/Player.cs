@@ -7,9 +7,9 @@ namespace LemonadeStand
     public class Player
     {
         public string name;
-        public Inventory inventory;
-        public Wallet wallet;
-        public Recipe recipe;
+        public Inventory inventory = new Inventory();
+        public Wallet wallet = new Wallet();
+        public Recipe recipe ;
         public Pitcher pitcher;
 
         public Player()

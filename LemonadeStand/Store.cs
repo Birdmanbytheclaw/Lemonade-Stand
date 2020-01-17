@@ -28,6 +28,10 @@ namespace LemonadeStand
 
         public static void BuyLemons()
         {
+            if(lemonsPurchased == 6)
+            {
+                
+            }
             
         }
 
