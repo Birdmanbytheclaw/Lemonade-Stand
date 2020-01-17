@@ -17,5 +17,10 @@ namespace LemonadeStand
 
         }
 
+        public static void NamePlayer()
+        {
+
+        }
+
     }
 }

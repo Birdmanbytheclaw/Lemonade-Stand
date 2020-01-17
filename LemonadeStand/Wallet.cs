@@ -17,9 +17,9 @@ namespace LemonadeStand
         //For checing balance while making purchases in store --- Will most likely ajust if statement check at a later time
         public void CheckWalletBalance()
         {
-            if(Money <= 0)
+            if(Money <= money)
             {
-                Console.WriteLine("You are out of Money!");
+                Console.WriteLine("You do not have enough Money!");
             }
             else
             {

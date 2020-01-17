@@ -8,7 +8,7 @@ namespace LemonadeStand
     {
         public Lemon()
         {
-
+            name = "Lemon";
         }
     }
 }

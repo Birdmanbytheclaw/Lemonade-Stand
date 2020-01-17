@@ -7,10 +7,12 @@ namespace LemonadeStand
 {
     public class Inventory
     {
-        public List<Lemon> lemons;
-        public List<SugarCube> sugarCubes;
-        public List<IceCube> iceCubes;
-        public List<Cup> cups;
+        Recipe recipeForPitcher = new Recipe();
+
+        public static List<Lemon> lemons;
+        public static List<SugarCube> sugarCubes;
+        public static List<IceCube> iceCubes;
+        public static List<Cup> cups;
         
         public Inventory()
         {
@@ -28,29 +30,35 @@ namespace LemonadeStand
             cups.Clear();
         }
 
-        //Displays amount of each item in inventory -- Had to add using.System.Linq to use count method.
-        public void CurrentInventory()
-        {
-            Console.WriteLine("Current Inventory:");
-            Console.WriteLine($"You have {lemons.Count()} Lemons.");
-            Console.WriteLine($"You have {sugarCubes.Count()} Sugar Cubes.");
-            Console.WriteLine($"You have {iceCubes.Count()} Ice Cubes.");
-            Console.WriteLine($"You have {cups.Count()} Cups.");
-
-            Console.Write("Press Enter to continue... ");
-            Console.ReadLine();
-            Console.Clear();
-        }
-
-        //Need a counter for Cups sold
-        public void InventorySold()
-        {
-
-        }
-
         //Recipe for Pitcher, Items it takes to make a Pitcher and remove those Items from Inventory when used to make a Pitcher
-        public void RecipeForPitcher()
+        public void MakePitcher()
         {
+            string makePitcherResponse = Console.ReadLine();
+            if (makePitcherResponse == "yes")
+            {
+                if (lemons.Count() >= recipeForPitcher.amountOfLemons && sugarCubes.Count() >= recipeForPitcher.amountOfSugarCubes && iceCubes.Count() >= recipeForPitcher.amountOfIceCubes)
+                {
+                    for(int i = 0; i >= lemons.Count(); i++)
+                    {
+                        lemons.RemoveAt(i);
+                    }
+
+                    for (int i = 0; i >= sugarCubes.Count(); i++)
+                    {
+                        sugarCubes.RemoveAt(i);
+                    }
+
+                    for(int i = 0; i >= iceCubes.Count(); i++)
+                    {
+                        iceCubes.RemoveAt(i);
+                    }
+                    //might need to add count for pitcher or cups of lemonade
+                }
+            }
+            else
+            {
+                Console.WriteLine();
+            }
 
         }
 

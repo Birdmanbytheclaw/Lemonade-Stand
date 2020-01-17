@@ -8,7 +8,7 @@ namespace LemonadeStand
         {
             Console.WriteLine("Lemonade Stand!");
 
-            
+           
         }
     }
 }

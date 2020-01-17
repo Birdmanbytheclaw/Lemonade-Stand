@@ -7,8 +7,6 @@ namespace LemonadeStand
 {
     public class Recipe
     {
-        Inventory inventoryForRecipe = new Inventory();
-
         public int amountOfLemons;
         public int amountOfSugarCubes;
         public int amountOfIceCubes;
@@ -16,16 +14,13 @@ namespace LemonadeStand
 
         public Recipe()
         {
-            amountOfLemons = inventoryForRecipe.lemons.Count();
-            amountOfSugarCubes = inventoryForRecipe.sugarCubes.Count();
-            amountOfIceCubes = inventoryForRecipe.iceCubes.Count();
+            amountOfLemons = 8;
+            amountOfSugarCubes = 12;
+            amountOfIceCubes = 4;
             pricePerCup = .25;
         }
 
-        public void PitcherRecipe()
-        {
-            Console.WriteLine($"8 Lemons, 12 Sugar Cubes, 4 Ice Cubes, eqaul 1 Pitcher.");
-        }
+
 
         
 
