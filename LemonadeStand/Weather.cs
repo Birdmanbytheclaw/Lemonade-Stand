@@ -25,9 +25,10 @@ namespace LemonadeStand
             Console.WriteLine("and " + condition);
         }
 
-        public int GetTempurature(Random Rnd)
+        public int GetTempurature()
         {
-            temperature = Rnd.Next(60, 90);
+            Random Temperature = new Random();
+            temperature = Temperature.Next(60, 90);
             return temperature;
         }
 
