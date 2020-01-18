@@ -57,7 +57,7 @@ namespace LemonadeStand
             }
             else
             {
-                Console.WriteLine();
+                Console.WriteLine("You do not have enough product!");
             }
 
         }

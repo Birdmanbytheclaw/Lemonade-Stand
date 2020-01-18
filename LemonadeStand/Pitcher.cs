@@ -6,11 +6,11 @@ namespace LemonadeStand
 {
     public class Pitcher
     {
-        public int cupsLeftInPitcher = 10;
+        public int cupsLeftInPitcher;
 
-        public Pitcher(int cupsLeftInPitcher)
+        public Pitcher()
         {
-            this.cupsLeftInPitcher = cupsLeftInPitcher;
+            cupsLeftInPitcher = 10;
         }
     }
 

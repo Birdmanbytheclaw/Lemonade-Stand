@@ -32,7 +32,7 @@ namespace LemonadeStand
             Console.WriteLine($"8 Lemons, 12 Sugar Cubes, 4 Ice Cubes, eqaul 1 Pitcher.");
         }
 
-        public static void MakePitcher(Make)
+        public static void MakePitcher()
         {
             Console.WriteLine("Would you like to make a pitcher of lemonade?");
             Console.WriteLine("Type yes to make pitcher or no to continue");

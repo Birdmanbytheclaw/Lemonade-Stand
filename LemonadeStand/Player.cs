@@ -7,19 +7,18 @@ namespace LemonadeStand
     public class Player
     {
         public string name;
-        public Inventory inventory = new Inventory();
-        public Wallet wallet = new Wallet();
+        public Inventory inventory;
+        public Wallet wallet;
         public Recipe recipe ;
         public Pitcher pitcher;
 
-        public Player()
+        public Player(string name)
         {
-
-        }
-
-        public static void NamePlayer()
-        {
-
+            this.name = name;
+            inventory = new Inventory();
+            wallet = new Wallet();
+            recipe = new Recipe();
+            pitcher = new Pitcher();
         }
 
     }
