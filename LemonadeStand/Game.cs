@@ -12,9 +12,33 @@ namespace LemonadeStand
 
         public Game()
         {
-            days = new List<Day>() {new Day(1) };
+            days = new List<Day>() {new Day() };
             
         }
 
+        public int daysToBePlayed()
+        {
+            return 1;//1 is just holding a value to be changed later
+        }
+
+        public void dayAndWeather()
+        {
+
+        }
+
+        public void customersInGame()
+        {
+
+        }
+
+        public void useStore()
+        {
+
+        }
+
+        public void playGame()
+        {
+
+        }
     }
 }
