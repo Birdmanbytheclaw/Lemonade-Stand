@@ -7,40 +7,47 @@ namespace LemonadeStand
     public class Weather
     {
         public string condition;
+        public string forecast;
         public int temperature;
         private List<string> weatherConditions;
-        public List<string> Forecast;
-        public string forecast;
+        Random randForWeather;
+        
 
         public Weather()
         {
             weatherConditions = new List<string>() { "Sunny", "Cloudy", "Foggy", "Windy", "Rainy" };
-            Forecast = new List<string>() {"Hot", "Cold", "Warm", "Cool" };
+            
         }
 
         public void ChooseCondition()
         {
-            Random PickCondition = new Random();
-            condition = weatherConditions[PickCondition.Next(1,5)];
-            Console.WriteLine("and " + condition);
+            int pick = randForWeather.Next(0, 4);
+            condition = weatherConditions[pick];
+            
+            switch (pick)
+            {
+                case 0:
+                    temperature = randForWeather.Next(75, 90);
+                    break;
+                case 1:
+                    temperature = randForWeather.Next(55, 75);
+                    break;
+                case 2:
+                    temperature = randForWeather.Next(50, 75);
+                    break;
+                case 3:
+                    temperature = randForWeather.Next(48, 65);
+                    break;
+                case 4:
+                    temperature = randForWeather.Next(48, 85);
+                    break;
+            }
         }
 
-        public int GetTempurature()
-        {
-            Random Temperature = new Random();
-            temperature = Temperature.Next(60, 90);
-            return temperature;
-        }
-
-        public void ChooseForecast()
-        {
-            Random PickForecast = new Random();
-            forecast = Forecast[PickForecast.Next(1, 4)];
-            Console.WriteLine(forecast);
-        }
         public void PredictedForecast()
         {
-            Console.WriteLine("It will be" + forecast + " and partly" + condition);
+            forecast = weatherConditions[randForWeather.Next(0, 4)];
+            Console.WriteLine("Forecast: " + forecast);
         }
 
     }

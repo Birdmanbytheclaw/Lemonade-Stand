@@ -9,10 +9,8 @@ namespace LemonadeStand
         public Weather weather;
         public List<Customer> customers;
         public int day;
-        public double dayEarnings;
-        public double dayProfit;
 
-        public Day(int day)
+        public Day()
         {
             day = 1;
             weather = new Weather();
