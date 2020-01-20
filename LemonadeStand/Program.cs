@@ -8,6 +8,10 @@ namespace LemonadeStand
         {
             Console.WriteLine("Lemonade Stand!");
 
+            Inventory inventory = new Inventory();
+            inventory.MakePitcher();
+            Console.ReadLine();
+
            
         }
     }

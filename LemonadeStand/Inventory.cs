@@ -31,9 +31,9 @@ namespace LemonadeStand
         }
 
         //Recipe for Pitcher, Items it takes to make a Pitcher and remove those Items from Inventory when used to make a Pitcher
-        public void MakePitcher()
+        public int MakePitcher()
         {
-            string makePitcherResponse = Console.ReadLine();
+            string makePitcherResponse = UserInterface.MakePitcherPrompt();
             if (makePitcherResponse == "yes")
             {
                 if (lemons.Count() >= recipeForPitcher.amountOfLemons && sugarCubes.Count() >= recipeForPitcher.amountOfSugarCubes && iceCubes.Count() >= recipeForPitcher.amountOfIceCubes)
@@ -54,10 +54,12 @@ namespace LemonadeStand
                     }
                     //might need to add count for pitcher or cups of lemonade
                 }
+                return 1;
             }
             else
             {
                 Console.WriteLine("You do not have enough product!");
+                return 2;
             }
 
         }
