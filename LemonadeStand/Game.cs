@@ -6,6 +6,8 @@ namespace LemonadeStand
 {
     public class Game
     {
+        Day day = new Day();
+        Store store = new Store();
         private Player player = new Player();
         private List<Day> days;
         private int currentDay;
@@ -24,7 +26,8 @@ namespace LemonadeStand
 
         public void dayAndWeather()
         {
-
+            Console.WriteLine( day.weather.temperature);
+            Console.WriteLine(day.weather.condition);
         }
 
         public void customersInGame()
