@@ -7,6 +7,7 @@ namespace LemonadeStand
 {
     public static class UserInterface
     {
+        
         public static string name;
 
         public static string Name { get { return name; } set { name = value; } }
@@ -19,8 +20,9 @@ namespace LemonadeStand
 
         public static void SetPlayerName()
         {
-            Console.WriteLine("Enter a name for your player: ");
-            name = Console.ReadLine();        }
+            Console.Write("Enter a name for your player: ");
+            name = Console.ReadLine();     
+        }
 
         public static void PitcherRecipe()
         {

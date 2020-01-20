@@ -6,7 +6,7 @@ namespace LemonadeStand
 {
     public class Game
     {
-        private Player player;
+        private Player player = new Player();
         private List<Day> days;
         private int currentDay;
 
@@ -18,7 +18,8 @@ namespace LemonadeStand
 
         public int daysToBePlayed()
         {
-            return 1;//1 is just holding a value to be changed later
+
+            return 1;
         }
 
         public void dayAndWeather()
@@ -33,11 +34,14 @@ namespace LemonadeStand
 
         public void useStore()
         {
+            
 
         }
 
         public void playGame()
         {
+            UserInterface.Greeting();
+            UserInterface.SetPlayerName();
 
         }
     }

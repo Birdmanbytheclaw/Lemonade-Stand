@@ -6,15 +6,14 @@ namespace LemonadeStand
 {
     public class Player
     {
-        public string name;
+        public static string name;
         public Inventory inventory;
         public Wallet wallet;
         public Recipe recipe ;
         public Pitcher pitcher;
 
-        public Player(string name)
+        public Player()
         {
-            this.name = name;
             inventory = new Inventory();
             wallet = new Wallet();
             recipe = new Recipe();
