@@ -20,8 +20,48 @@ namespace LemonadeStand
 
         public void spawnCustomers()
         {
+            int NumberOfCustomers = 0;
+            Random chanceBuy = new Random();
 
+            if (weather.condition == weather.weatherConditions[0])
+            { NumberOfCustomers = 120;
+                for (int i = 0; i < NumberOfCustomers; i++)
+                {
+                    customers.Add(new Customer("Anon", chanceBuy.Next(50,90)));
+                }
+            }
+            else if (weather.condition == weather.weatherConditions[1])
+            { NumberOfCustomers = 90;
+                for (int i = 0; i < NumberOfCustomers; i++)
+                {
+                    customers.Add(new Customer("Anon", chanceBuy.Next(40, 80)));
+                }
+            }
+            else if (weather.condition == weather.weatherConditions[2])
+            { NumberOfCustomers = 70;
+                for (int i = 0; i < NumberOfCustomers; i++)
+                {
+                    customers.Add(new Customer("Anon", chanceBuy.Next(30, 70)));
+                }
+            }
+            else if (weather.condition == weather.weatherConditions[3])
+            { NumberOfCustomers = 60;
+                for (int i = 0; i < NumberOfCustomers; i++)
+                {
+                    customers.Add(new Customer("Anon", chanceBuy.Next(20, 50)));
+                }
+            }
+            else if (weather.condition == weather.weatherConditions[4])
+            { NumberOfCustomers = 50;
+                for (int i = 0; i < NumberOfCustomers; i++)
+                {
+                    customers.Add(new Customer("Anon", chanceBuy.Next(10, 40)));
+                }
+            }
+            else
+            { 
+                Console.WriteLine("no customers"); 
+            }                        
         }
-
     }
 }

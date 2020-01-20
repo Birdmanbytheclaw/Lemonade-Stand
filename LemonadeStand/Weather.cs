@@ -9,7 +9,7 @@ namespace LemonadeStand
         public string condition;
         public string forecast;
         public int temperature;
-        private List<string> weatherConditions;
+        public List<string> weatherConditions;
         private Random randForWeather = new Random();
 
 

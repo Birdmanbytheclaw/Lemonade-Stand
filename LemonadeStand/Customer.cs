@@ -7,10 +7,13 @@ namespace LemonadeStand
     public class Customer
     {
         public string name;
+        public double chanceBuy;
 
-        public Customer(string name)
+
+        public Customer(string name, double chanceBuy)
         {
             this.name = name;
+            this.chanceBuy = chanceBuy;
         }
     }
 }
