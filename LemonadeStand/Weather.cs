@@ -10,8 +10,8 @@ namespace LemonadeStand
         public string forecast;
         public int temperature;
         private List<string> weatherConditions;
-        Random randForWeather;
-        
+        private Random randForWeather = new Random();
+
 
         public Weather()
         {
@@ -23,7 +23,7 @@ namespace LemonadeStand
         {
             int pick = randForWeather.Next(0, 4);
             condition = weatherConditions[pick];
-            
+
             switch (pick)
             {
                 case 0:

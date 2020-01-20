@@ -8,8 +8,11 @@ namespace LemonadeStand
         {
             Console.WriteLine("Lemonade Stand!");
 
-            Inventory inventory = new Inventory();
-            inventory.MakePitcher();
+            //Inventory inventory = new Inventory();
+            //inventory.MakePitcher();
+            Weather weather = new Weather();
+            weather.ChooseCondition();
+            Console.WriteLine(weather.temperature + " " + weather.condition);
             Console.ReadLine();
 
            
