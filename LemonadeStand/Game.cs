@@ -5,7 +5,8 @@ using System.Text;
 namespace LemonadeStand
 {
     public class Game
-    {
+    { 
+        Weather weather = new Weather();
         private Player player;
         private List<Day> days;
         private int currentDay;
@@ -23,7 +24,8 @@ namespace LemonadeStand
 
         public void dayAndWeather()
         {
-
+            Console.WriteLine( weather.temperature);
+            Console.WriteLine(weather.condition);
         }
 
         public void customersInGame()
