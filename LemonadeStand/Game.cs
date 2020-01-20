@@ -37,7 +37,10 @@ namespace LemonadeStand
 
         public void useStore()
         {
-            
+            store.BuyLemons();
+            store.BuySugarCubes();
+            store.BuyIceCubes();
+            store.BuyCups();
 
         }
 

@@ -18,5 +18,10 @@ namespace LemonadeStand
 
         }
 
+        public void spawnCustomers()
+        {
+
+        }
+
     }
 }

@@ -8,7 +8,7 @@ namespace LemonadeStand
     {
         public string name;
 
-        public Customer(string name) 
+        public Customer(string name)
         {
             this.name = name;
         }

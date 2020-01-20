@@ -19,7 +19,7 @@ namespace LemonadeStand
             
         }
 
-        public void ChooseCondition()
+        public void SetWeatherCondition()
         {
             int pick = randForWeather.Next(0, 4);
             condition = weatherConditions[pick];
