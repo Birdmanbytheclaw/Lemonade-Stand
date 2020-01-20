@@ -6,28 +6,31 @@ namespace LemonadeStand
 {
     public class Game
     {
-        Day day = new Day();
-        Store store = new Store();
-        private Player player = new Player();
+        Day day;
+        Store store;
+        private Player player;
         private List<Day> days;
         private int currentDay;
+        private int numberOfPitchers;
+        private int storeLoop;
 
         public Game()
         {
             days = new List<Day>() {new Day() };
+            day = new Day();
+            store = new Store(player);
             
         }
 
-        public int daysToBePlayed()
-        {
+        //public int daysToBePlayed()
+        //{
 
-            return 1;
-        }
+        //    return 1;
+        //}
 
         public void dayAndWeather()
         {
-            Console.WriteLine( day.weather.temperature);
-            Console.WriteLine(day.weather.condition);
+            Console.WriteLine("Weather for today is: " + day.weather.condition + " and " + day.weather.temperature + ".");
         }
 
         public void customersInGame()
@@ -46,8 +49,35 @@ namespace LemonadeStand
 
         public void playGame()
         {
+            
             UserInterface.Greeting();
             UserInterface.SetPlayerName();
+            day.weather.SetWeatherCondition();
+            dayAndWeather();
+            day.spawnCustomers();
+            while(storeLoop != 8)
+            {
+                storeLoop = UserInterface.StoreDisplay();
+                if (storeLoop == 1)
+                {
+                    store.BuyLemons();
+                }
+                else if(storeLoop == 2)
+                {
+                    store.BuySugarCubes();
+                }
+                else if(storeLoop == 3)
+                {
+                    store.BuyIceCubes();
+                }
+                else if(storeLoop == 4)
+                {
+                    store.BuyCups();
+                }
+                player.wallet.CheckWalletBalance();
+            }
+            
+
 
         }
     }

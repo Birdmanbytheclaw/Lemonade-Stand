@@ -27,35 +27,35 @@ namespace LemonadeStand
             { NumberOfCustomers = 120;
                 for (int i = 0; i < NumberOfCustomers; i++)
                 {
-                    customers.Add(new Customer("Anon", chanceBuy.Next(50,90)));
+                    customers.Add(new Customer("Anon", chanceBuy.Next(1, 100)));
                 }
             }
             else if (weather.condition == weather.weatherConditions[1])
             { NumberOfCustomers = 90;
                 for (int i = 0; i < NumberOfCustomers; i++)
                 {
-                    customers.Add(new Customer("Anon", chanceBuy.Next(40, 80)));
+                    customers.Add(new Customer("Anon", chanceBuy.Next(1, 100)));
                 }
             }
             else if (weather.condition == weather.weatherConditions[2])
             { NumberOfCustomers = 70;
                 for (int i = 0; i < NumberOfCustomers; i++)
                 {
-                    customers.Add(new Customer("Anon", chanceBuy.Next(30, 70)));
+                    customers.Add(new Customer("Anon", chanceBuy.Next(1, 100)));
                 }
             }
             else if (weather.condition == weather.weatherConditions[3])
             { NumberOfCustomers = 60;
                 for (int i = 0; i < NumberOfCustomers; i++)
                 {
-                    customers.Add(new Customer("Anon", chanceBuy.Next(20, 50)));
+                    customers.Add(new Customer("Anon", chanceBuy.Next(1, 100)));
                 }
             }
             else if (weather.condition == weather.weatherConditions[4])
             { NumberOfCustomers = 50;
                 for (int i = 0; i < NumberOfCustomers; i++)
                 {
-                    customers.Add(new Customer("Anon", chanceBuy.Next(10, 40)));
+                    customers.Add(new Customer("Anon", chanceBuy.Next(1, 100)));
                 }
             }
             else

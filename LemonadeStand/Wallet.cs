@@ -6,12 +6,11 @@ namespace LemonadeStand
 {
     public class Wallet
     {
-        private double money = 0.00;
-        public double Money;
+        private double money = 0.92;
+        public double Money = 20.00;
 
         public Wallet()
         {
-            Money = 20.00;
         }
 
         //For checing balance while making purchases in store --- Will most likely ajust if statement check at a later time
