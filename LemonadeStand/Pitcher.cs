@@ -7,7 +7,7 @@ namespace LemonadeStand
     public class Pitcher
     {
         public int cupsLeftInPitcher;
-
+        //Single responsibility Principle (cupsLeftInPitcher)
         public Pitcher()
         {
             cupsLeftInPitcher = 10;
