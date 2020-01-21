@@ -21,6 +21,7 @@ namespace LemonadeStand
         static double CupsPurchased;
 
         public double price;
+        public int countPitchersMade = 0;
 
         Inventory inventory = new Inventory();
 
@@ -42,7 +43,7 @@ namespace LemonadeStand
                 Console.WriteLine(player.inventory.sugarCubes.Count() + " Sugar Cubes.  Press 2 to buy more Sugar Cubes.");
                 Console.WriteLine(player.inventory.iceCubes.Count() + " Ice Cubes.    Press 3 to buy more Ice Cubes.");
                 Console.WriteLine(player.inventory.cups.Count() + " Cups.         Press 4 to buy more Cups");
-                Console.WriteLine("!Press 8 to leave the store!");
+                Console.WriteLine("!Press 5 to leave the store!");
                 buyProduct = int.TryParse(Console.ReadLine(), out num);
 
                 if (num == 1)
@@ -242,6 +243,43 @@ namespace LemonadeStand
         public void ShowProfit()
         {
             Console.WriteLine("You made " + player.wallet.Money + " over seven days.");
+
+        }
+
+        //Recipe for Pitcher, Items it takes to make a Pitcher and remove those Items from Inventory when used to make a Pitcher
+        public void MakePitcher()
+        {
+            //int countPitchersMade = 0;
+            string makePitcherResponse = UserInterface.MakePitcherPrompt();
+            if (makePitcherResponse == "yes")
+            {
+                int PitchersToBeMade = UserInterface.NumberOfPitchersToMake();
+                while (countPitchersMade < PitchersToBeMade)
+
+                    if (player.inventory.lemons.Count() >= player.recipe.amountOfLemons && player.inventory.sugarCubes.Count() >= player.recipe.amountOfSugarCubes && player.inventory.iceCubes.Count() >= player.recipe.amountOfIceCubes)
+                    {
+                        for (int i = 0; i >= player.inventory.lemons.Count(); i++)
+                        {
+                            player.inventory.lemons.RemoveAt(i);
+                        }
+
+                        for (int i = 0; i >= player.inventory.sugarCubes.Count(); i++)
+                        {
+                            player.inventory.sugarCubes.RemoveAt(i);
+                        }
+
+                        for (int i = 0; i >= player.inventory.iceCubes.Count(); i++)
+                        {
+                            player.inventory.iceCubes.RemoveAt(i);
+                        }
+                        countPitchersMade++;
+                        //might need to add count for pitcher or cups of lemonade
+                    }
+            }
+            else
+            {
+                Console.WriteLine("You do not have enough product!");
+            }
 
         }
 
