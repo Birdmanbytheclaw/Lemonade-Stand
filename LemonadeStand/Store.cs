@@ -23,7 +23,7 @@ namespace LemonadeStand
         public double price;
         public int countPitchersMade = 0;
 
-        Inventory inventory = new Inventory();
+        //Inventory inventory = new Inventory();
 
         public Store(Player player)
         {
@@ -255,26 +255,20 @@ namespace LemonadeStand
             {
                 int PitchersToBeMade = UserInterface.NumberOfPitchersToMake();
                 while (countPitchersMade < PitchersToBeMade)
-
-                    if (player.inventory.lemons.Count() >= player.recipe.amountOfLemons && player.inventory.sugarCubes.Count() >= player.recipe.amountOfSugarCubes && player.inventory.iceCubes.Count() >= player.recipe.amountOfIceCubes)
+                {
+                    if (((player.inventory.lemons.Count >= player.recipe.amountOfLemons) && (player.inventory.sugarCubes.Count >= player.recipe.amountOfSugarCubes) && (player.inventory.iceCubes.Count >= player.recipe.amountOfIceCubes)))
                     {
-                        for (int i = 0; i >= player.inventory.lemons.Count(); i++)
-                        {
-                            player.inventory.lemons.RemoveAt(i);
-                        }
+                        
+                            player.inventory.lemons.RemoveRange(0, player.recipe.amountOfLemons);
+                        
+                            player.inventory.sugarCubes.RemoveRange(0, player.recipe.amountOfSugarCubes);                     
 
-                        for (int i = 0; i >= player.inventory.sugarCubes.Count(); i++)
-                        {
-                            player.inventory.sugarCubes.RemoveAt(i);
-                        }
-
-                        for (int i = 0; i >= player.inventory.iceCubes.Count(); i++)
-                        {
-                            player.inventory.iceCubes.RemoveAt(i);
-                        }
+                            player.inventory.iceCubes.RemoveRange(0, player.recipe.amountOfIceCubes);
+                        
                         countPitchersMade++;
                         //might need to add count for pitcher or cups of lemonade
                     }
+                }
             }
             else
             {
