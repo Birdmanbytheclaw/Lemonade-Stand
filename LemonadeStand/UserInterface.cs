@@ -24,22 +24,6 @@ namespace LemonadeStand
             name = Console.ReadLine();     
         }
 
-        //public void StoreDisplay()
-        //{
-        //    bool buyProduct;
-        //    int num = 0;
-        //    Console.WriteLine("Lemonade Stand Store");
-        //    Console.WriteLine( "You Have: ");
-        //    Console.WriteLine(Inventory.lemons.Count + " lemons.       Press 1 to buy more Lemons.");
-        //    Console.WriteLine( Inventory.sugarCubes.Count + " Sugar Cubes.  Press 2 to buy more Sugar Cubes.");
-        //    Console.WriteLine(Inventory.iceCubes.Count + " Ice Cubes.    Press 3 to buy more Ice Cubes.");
-        //    Console.WriteLine(Inventory.cups.Count + " Cups.         Press 4 to buy more Cups");
-        //    Console.WriteLine("!Press 8 to leave the store!");
-        //    buyProduct = int.TryParse(Console.ReadLine(), out num);
-        //}
-
-
-
         public static void PitcherRecipe()
         {
             Console.WriteLine("8 Lemons, 12 Sugar Cubes, 4 Ice Cubes, eqaul 1 Pitcher.");
@@ -59,7 +43,6 @@ namespace LemonadeStand
             bool test;
             Console.WriteLine("How many pitchers would you like to make?");
             test = int.TryParse(Console.ReadLine(), out PitchersToBeMade);
-
             return PitchersToBeMade;
         }
 

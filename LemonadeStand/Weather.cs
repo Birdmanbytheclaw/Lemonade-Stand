@@ -47,7 +47,7 @@ namespace LemonadeStand
         public void PredictedForecast()
         {
             forecast = weatherConditions[randForWeather.Next(0, 4)];
-            Console.WriteLine("Forecast: " + forecast);
+            Console.WriteLine("Forecast for tomorrow: " + forecast);
         }
 
     }

@@ -42,9 +42,10 @@ namespace LemonadeStand
         {
             for(int i = 0; i < day.customers.Count; i++)
             {
-                if (store.countPitchersMade > 0 && player.pitcher.cupsLeftInPitcher > 0)
+                if ((store.countPitchersMade > 0) && (player.pitcher.cupsLeftInPitcher > 0))
                 {
                     player.wallet.Money += .25;
+                    player.inventory.cups.RemoveAt(i);
                     player.pitcher.cupsLeftInPitcher--;
                     if(player.pitcher.cupsLeftInPitcher == 0)
                     {
@@ -55,15 +56,6 @@ namespace LemonadeStand
                 }
             }
         }
-
-        //public void useStore()
-        //{
-        //    store.BuyLemons();
-        //    store.BuySugarCubes();
-        //    store.BuyIceCubes();
-        //    store.BuyCups();
-
-        //}
 
         public void playGame()
         {
@@ -76,9 +68,9 @@ namespace LemonadeStand
                 dayAndWeather();
                 day.spawnCustomers();
                 store.StoreMenu();
+                UserInterface.PitcherRecipe();
                 store.MakePitcher();
                 customersBuyLemonade();
-                //Console.WriteLine(currentDay);
                 forecastForNextDay();
                 UserInterface.StartNextDay();
                 Console.Clear();

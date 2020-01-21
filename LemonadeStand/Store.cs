@@ -242,21 +242,21 @@ namespace LemonadeStand
 
         public void ShowProfit()
         {
-            Console.WriteLine("You made " + player.wallet.Money + " over seven days.");
+            Console.WriteLine("          GAME OVER!                      ");
+            Console.WriteLine("You made $" + player.wallet.Money + " over seven days.");
 
         }
 
         //Recipe for Pitcher, Items it takes to make a Pitcher and remove those Items from Inventory when used to make a Pitcher
         public void MakePitcher()
         {
-            //int countPitchersMade = 0;
             string makePitcherResponse = UserInterface.MakePitcherPrompt();
             if (makePitcherResponse == "yes")
             {
                 int PitchersToBeMade = UserInterface.NumberOfPitchersToMake();
                 while (countPitchersMade < PitchersToBeMade)
                 {
-                    if (((player.inventory.lemons.Count >= player.recipe.amountOfLemons) && (player.inventory.sugarCubes.Count >= player.recipe.amountOfSugarCubes) && (player.inventory.iceCubes.Count >= player.recipe.amountOfIceCubes)))
+                    if ((player.inventory.lemons.Count >= player.recipe.amountOfLemons) && (player.inventory.sugarCubes.Count >= player.recipe.amountOfSugarCubes) && (player.inventory.iceCubes.Count >= player.recipe.amountOfIceCubes))
                     {
                         
                             player.inventory.lemons.RemoveRange(0, player.recipe.amountOfLemons);
@@ -264,7 +264,7 @@ namespace LemonadeStand
                             player.inventory.sugarCubes.RemoveRange(0, player.recipe.amountOfSugarCubes);                     
 
                             player.inventory.iceCubes.RemoveRange(0, player.recipe.amountOfIceCubes);
-                        
+
                         countPitchersMade++;
                         //might need to add count for pitcher or cups of lemonade
                     }
