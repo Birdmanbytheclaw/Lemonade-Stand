@@ -55,6 +55,10 @@ namespace LemonadeStand
                     {
                         UserInterface.PitchersToBeMade--;
                         player.pitcher.cupsLeftInPitcher = 10;
+                        if(UserInterface.PitchersToBeMade == 0)
+                        {
+                            break;
+                        }
                     }
                 }
             }
@@ -74,14 +78,21 @@ namespace LemonadeStand
             
             UserInterface.Greeting();
             UserInterface.SetPlayerName();
-            day.weather.SetWeatherCondition();
-            dayAndWeather();
-            day.spawnCustomers();
-            store.StoreMenu();
-            player.inventory.MakePitcher();
-            customersBuyLemonade();
-            //Console.WriteLine(currentDay);
-            forecastForNextDay();
+            while (currentDay <= 7)
+            {
+                day.weather.SetWeatherCondition();
+                dayAndWeather();
+                day.spawnCustomers();
+                store.StoreMenu();
+                player.inventory.MakePitcher();
+                customersBuyLemonade();
+                //Console.WriteLine(currentDay);
+                forecastForNextDay();
+                UserInterface.StartNextDay();
+                Console.Clear();
+                currentDay++;
+            }
+            UserInterface.ShowProfit();
 
         }
     }

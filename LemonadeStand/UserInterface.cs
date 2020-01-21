@@ -63,8 +63,15 @@ namespace LemonadeStand
             return PitchersToBeMade;
         }
 
+        public static void StartNextDay()
+        {
+            Console.WriteLine("Business day has ended. Press enter to continue");
+            Console.ReadLine();
+        }
+
         public static void ShowProfit()
         {
+            Console.WriteLine("You made ");
 
         }
     }

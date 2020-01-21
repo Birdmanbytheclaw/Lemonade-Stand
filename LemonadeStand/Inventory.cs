@@ -7,13 +7,12 @@ namespace LemonadeStand
 {
     public class Inventory
     {
+        public List<Lemon> lemons;
+        public List<SugarCube> sugarCubes;
+        public List<IceCube> iceCubes;
+        public List<Cup> cups;
         Recipe recipeForPitcher = new Recipe();
 
-        public static List<Lemon> lemons;
-        public static List<SugarCube> sugarCubes;
-        public static List<IceCube> iceCubes;
-        public static List<Cup> cups;
-        
         public Inventory()
         {
             lemons = new List<Lemon>();
