@@ -18,7 +18,8 @@ namespace LemonadeStand
         {
             days = new List<Day>() {new Day() };
             day = new Day();
-            store = new Store(player);
+            store = new Store();
+            player = new Player();
             
         }
 
@@ -33,7 +34,7 @@ namespace LemonadeStand
             Console.WriteLine("Weather for today is: " + day.weather.condition + " and " + day.weather.temperature + ".");
         }
 
-        public void customersInGame()
+        public void customersBuyLemonade()
         {
 
         }
@@ -61,6 +62,7 @@ namespace LemonadeStand
                 if (storeLoop == 1)
                 {
                     store.BuyLemons();
+                    player.wallet.Money -= store.price;
                 }
                 else if(storeLoop == 2)
                 {

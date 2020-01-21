@@ -20,14 +20,16 @@ namespace LemonadeStand
         private double pricePerCup;
         static double CupsPurchased;
 
+        public double price;
+
         Inventory inventory = new Inventory();
 
-        public Store(Player player)
+        public Store()
         {
             player = new Player();
         }
 
-        public void BuyLemons()
+        public double BuyLemons()
         {
             bool buyItem;
             Console.WriteLine("Number of lemons to buy. Enter 10, 30 or 75: ");
@@ -38,33 +40,38 @@ namespace LemonadeStand
             if (lemonsPurchased == 10)
             {
                 pricePerLemon = .76;
-                player.wallet.Money -= pricePerLemon;
+                price = pricePerLemon;
+                //player.wallet.Money -= pricePerLemon;
                 for(int i = 0; i < lemonsPurchased; i++)
                 {
                     player.inventory.AddLemonToLemonsList();
                 }
+                return price;
             }
             else if(lemonsPurchased == 30)
             {
                 pricePerLemon = 2.08;
-                player.wallet.Money -= pricePerLemon;
+                //player.wallet.Money -= pricePerLemon;
                 for (int i = 0; i < lemonsPurchased; i++)
                 {
                     player.inventory.AddLemonToLemonsList();
                 }
+                return price;
             }
             else if(lemonsPurchased == 75)
             {
                 pricePerLemon = 4.17;
-                player.wallet.Money -= pricePerLemon;
+                //player.wallet.Money -= pricePerLemon;
                 for (int i = 0; i < lemonsPurchased; i++)
                 {
                     player.inventory.AddLemonToLemonsList();
                 }
+                return price;
             }
             else
             {
                 Console.WriteLine("Invalid selection");
+                return price;
             }
             Console.Clear();
         }
@@ -80,7 +87,7 @@ namespace LemonadeStand
             if (SugarCubesPurchased == 8)
             {
                 pricePerSugarCube = .53;
-                player.wallet.Money -= pricePerSugarCube;
+                //player.wallet.Money -= pricePerSugarCube;
                 for(int i = 0; i < SugarCubesPurchased; i++)
                 {
                     player.inventory.AddSugarCubeToSugarCubesList();
@@ -89,7 +96,7 @@ namespace LemonadeStand
             else if(SugarCubesPurchased == 20)
             {
                 pricePerSugarCube = 1.64;
-                player.wallet.Money -= pricePerSugarCube;
+                //player.wallet.Money -= pricePerSugarCube;
                 for (int i = 0; i < SugarCubesPurchased; i++)
                 {
                     player.inventory.AddSugarCubeToSugarCubesList();
@@ -98,7 +105,7 @@ namespace LemonadeStand
             else if(SugarCubesPurchased == 40)
             {
                 pricePerSugarCube = 3.28;
-                player.wallet.Money -= pricePerSugarCube;
+                //player.wallet.Money -= pricePerSugarCube;
                 for (int i = 0; i < SugarCubesPurchased; i++)
                 {
                     player.inventory.AddSugarCubeToSugarCubesList();
@@ -122,7 +129,7 @@ namespace LemonadeStand
             if (IceCubesPurchased == 40)
             {
                 pricePerIceCube = .92;
-                player.wallet.Money -= pricePerIceCube;
+                //player.wallet.Money -= pricePerIceCube;
                 for(int i = 0; i < IceCubesPurchased; i++)
                 {
                     player.inventory.AddIceCubesToIceCubesList();
@@ -131,7 +138,7 @@ namespace LemonadeStand
             else if(IceCubesPurchased == 60)
             {
                 pricePerIceCube = 2.15;
-                player.wallet.Money -= pricePerIceCube;
+                //player.wallet.Money -= pricePerIceCube;
                 for (int i = 0; i < IceCubesPurchased; i++)
                 {
                     player.inventory.AddIceCubesToIceCubesList();
@@ -140,7 +147,7 @@ namespace LemonadeStand
             else if(IceCubesPurchased == 100)
             {
                 pricePerIceCube = 3.60;
-                player.wallet.Money -= pricePerIceCube;
+                //player.wallet.Money -= pricePerIceCube;
                 for (int i = 0; i < IceCubesPurchased; i++)
                 {
                     player.inventory.AddIceCubesToIceCubesList();
@@ -164,7 +171,7 @@ namespace LemonadeStand
             if (CupsPurchased == 25)
             {
                 pricePerCup = .97;
-                player.wallet.Money -= pricePerCup;
+                //player.wallet.Money -= pricePerCup;
                 for(int i = 0; i < CupsPurchased; i++)
                 {
                     player.inventory.AddCupToCupsList();
@@ -173,7 +180,7 @@ namespace LemonadeStand
             else if(CupsPurchased == 50)
             {
                 pricePerCup = 1.69;
-                player.wallet.Money -= pricePerCup;
+                //player.wallet.Money -= pricePerCup;
                 for (int i = 0; i < CupsPurchased; i++)
                 {
                     player.inventory.AddCupToCupsList();
@@ -182,7 +189,7 @@ namespace LemonadeStand
             else if(CupsPurchased == 100)
             {
                 pricePerCup = 3.09;
-                player.wallet.Money -= pricePerCup;
+                //player.wallet.Money -= pricePerCup;
                 for (int i = 0; i < CupsPurchased; i++)
                 {
                     player.inventory.AddCupToCupsList();
