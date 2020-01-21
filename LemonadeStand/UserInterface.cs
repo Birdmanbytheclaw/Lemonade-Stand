@@ -8,6 +8,7 @@ namespace LemonadeStand
     public static class UserInterface
     {
         public static string name;
+        public static int PitchersToBeMade;
 
         public static string Name { get { return name; } set { name = value; } }
 
@@ -51,6 +52,20 @@ namespace LemonadeStand
             string makePitcherResponse = Console.ReadLine();
 
             return makePitcherResponse;
+        }
+
+        public static int NumberOfPitchersToMake()
+        {
+            bool test;
+            Console.WriteLine("How many pitchers would you like to make?");
+            test = int.TryParse(Console.ReadLine(), out PitchersToBeMade);
+
+            return PitchersToBeMade;
+        }
+
+        public static void ShowProfit()
+        {
+
         }
     }
 }

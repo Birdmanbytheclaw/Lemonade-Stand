@@ -33,11 +33,12 @@ namespace LemonadeStand
         //Recipe for Pitcher, Items it takes to make a Pitcher and remove those Items from Inventory when used to make a Pitcher
         public void MakePitcher()
         {
-            int countPitchersMade;
+            int countPitchersMade = 0;
             string makePitcherResponse = UserInterface.MakePitcherPrompt();
             if (makePitcherResponse == "yes")
             {
-                //while (countPitchersMade < 3)
+                int PitchersToBeMade = UserInterface.NumberOfPitchersToMake();
+                while (countPitchersMade < PitchersToBeMade)
 
                 if (lemons.Count() >= recipeForPitcher.amountOfLemons && sugarCubes.Count() >= recipeForPitcher.amountOfSugarCubes && iceCubes.Count() >= recipeForPitcher.amountOfIceCubes)
                 {
@@ -55,7 +56,7 @@ namespace LemonadeStand
                     {
                         iceCubes.RemoveAt(i);
                     }
-                    //countPitchersMade++;
+                    countPitchersMade++;
                     //might need to add count for pitcher or cups of lemonade
                 }
             }

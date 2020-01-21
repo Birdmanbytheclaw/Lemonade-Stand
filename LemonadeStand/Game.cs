@@ -27,6 +27,12 @@ namespace LemonadeStand
             day.weather.PredictedForecast();
         }
 
+        public void dayCounter()
+        {
+            days.Add(new Day());
+            currentDay = days.Count;
+        }
+
         public void dayAndWeather()
         {
             Console.WriteLine("Weather for today is: " + day.weather.condition + " and " + day.weather.temperature + ".");
@@ -39,21 +45,29 @@ namespace LemonadeStand
                 if (day.customers[i].chanceBuy > 70)
                 {
                     player.wallet.Money += .25;
+                    Console.WriteLine("You have " + UserInterface.PitchersToBeMade + "Pitchers and " + player.pitcher.cupsLeftInPitcher + " cups left in Pitcher.");
+                    //if (UserInterface.PitchersToBeMade == 0 && player.pitcher.cupsLeftInPitcher == 0)
+                    //{
+                    //    break;
+                    //}
+                    player.pitcher.cupsLeftInPitcher--;
+                    if(player.pitcher.cupsLeftInPitcher == 0)
+                    {
+                        UserInterface.PitchersToBeMade--;
+                        player.pitcher.cupsLeftInPitcher = 10;
+                    }
                 }
             }
-            days.Add(new Day());
-            currentDay = days.Count;
-
         }
 
-        public void useStore()
-        {
-            store.BuyLemons();
-            store.BuySugarCubes();
-            store.BuyIceCubes();
-            store.BuyCups();
+        //public void useStore()
+        //{
+        //    store.BuyLemons();
+        //    store.BuySugarCubes();
+        //    store.BuyIceCubes();
+        //    store.BuyCups();
 
-        }
+        //}
 
         public void playGame()
         {
@@ -64,9 +78,9 @@ namespace LemonadeStand
             dayAndWeather();
             day.spawnCustomers();
             store.StoreMenu();
-
+            player.inventory.MakePitcher();
             customersBuyLemonade();
-            Console.WriteLine(currentDay);
+            //Console.WriteLine(currentDay);
             forecastForNextDay();
 
         }
