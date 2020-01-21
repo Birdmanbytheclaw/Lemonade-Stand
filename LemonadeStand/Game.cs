@@ -92,7 +92,7 @@ namespace LemonadeStand
                 Console.Clear();
                 currentDay++;
             }
-            UserInterface.ShowProfit();
+            store.ShowProfit();
 
         }
     }

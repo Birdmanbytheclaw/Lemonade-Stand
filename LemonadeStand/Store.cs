@@ -239,8 +239,14 @@ namespace LemonadeStand
             Console.Clear();
         }
 
+        public void ShowProfit()
+        {
+            Console.WriteLine("You made " + player.wallet.Money + " over seven days.");
 
+        }
 
     }
+
+    
 }
     
