@@ -23,22 +23,19 @@ namespace LemonadeStand
             name = Console.ReadLine();     
         }
 
-        public static int StoreDisplay()
-        {
-            bool buyProduct;
-            int num = 0;
-            Console.WriteLine("Lemonade Stand Store");
-            Console.WriteLine( "You Have: ");
-            Console.WriteLine(Inventory.lemons.Count + " lemons.       Press 1 to buy more Lemons.");
-            Console.WriteLine( Inventory.sugarCubes.Count + " Sugar Cubes.  Press 2 to buy more Sugar Cubes.");
-            Console.WriteLine(Inventory.iceCubes.Count + " Ice Cubes.    Press 3 to buy more Ice Cubes.");
-            Console.WriteLine(Inventory.cups.Count + " Cups.         Press 4 to buy more Cups");
-            Console.WriteLine("!Press 8 to leave the store!");
-            buyProduct = int.TryParse(Console.ReadLine(), out num);
-
-
-            return num;
-        }
+        //public void StoreDisplay()
+        //{
+        //    bool buyProduct;
+        //    int num = 0;
+        //    Console.WriteLine("Lemonade Stand Store");
+        //    Console.WriteLine( "You Have: ");
+        //    Console.WriteLine(Inventory.lemons.Count + " lemons.       Press 1 to buy more Lemons.");
+        //    Console.WriteLine( Inventory.sugarCubes.Count + " Sugar Cubes.  Press 2 to buy more Sugar Cubes.");
+        //    Console.WriteLine(Inventory.iceCubes.Count + " Ice Cubes.    Press 3 to buy more Ice Cubes.");
+        //    Console.WriteLine(Inventory.cups.Count + " Cups.         Press 4 to buy more Cups");
+        //    Console.WriteLine("!Press 8 to leave the store!");
+        //    buyProduct = int.TryParse(Console.ReadLine(), out num);
+        //}
 
 
 

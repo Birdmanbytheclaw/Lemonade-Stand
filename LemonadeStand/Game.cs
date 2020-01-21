@@ -11,23 +11,21 @@ namespace LemonadeStand
         private Player player;
         private List<Day> days;
         private int currentDay;
-        private int numberOfPitchers;
-        private int storeLoop;
 
         public Game()
         {
             days = new List<Day>() {new Day() };
             day = new Day();
-            store = new Store();
             player = new Player();
+            store = new Store(player);
+
             
         }
 
-        //public int daysToBePlayed()
-        //{
-
-        //    return 1;
-        //}
+        public void forecastForNextDay()
+        {
+            day.weather.PredictedForecast();
+        }
 
         public void dayAndWeather()
         {
@@ -36,6 +34,15 @@ namespace LemonadeStand
 
         public void customersBuyLemonade()
         {
+            for(int i = 0; i < day.customers.Count; i++)
+            {
+                if (day.customers[i].chanceBuy > 70)
+                {
+                    player.wallet.Money += .25;
+                }
+            }
+            days.Add(new Day());
+            currentDay = days.Count;
 
         }
 
@@ -56,30 +63,11 @@ namespace LemonadeStand
             day.weather.SetWeatherCondition();
             dayAndWeather();
             day.spawnCustomers();
-            while(storeLoop != 8)
-            {
-                storeLoop = UserInterface.StoreDisplay();
-                if (storeLoop == 1)
-                {
-                    store.BuyLemons();
-                    player.wallet.Money -= store.price;
-                }
-                else if(storeLoop == 2)
-                {
-                    store.BuySugarCubes();
-                }
-                else if(storeLoop == 3)
-                {
-                    store.BuyIceCubes();
-                }
-                else if(storeLoop == 4)
-                {
-                    store.BuyCups();
-                }
-                player.wallet.CheckWalletBalance();
-            }
-            
+            store.StoreMenu();
 
+            customersBuyLemonade();
+            Console.WriteLine(currentDay);
+            forecastForNextDay();
 
         }
     }
