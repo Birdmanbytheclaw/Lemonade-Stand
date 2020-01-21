@@ -7,7 +7,7 @@ namespace LemonadeStand
     public abstract class Item
     {
         public string name;
-
+        //Liskkov substitution principle (Item - Lemon)
         public Item()
         {
 
