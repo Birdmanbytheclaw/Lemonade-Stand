@@ -19,6 +19,7 @@ namespace LemonadeStand
 
         private double pricePerCup;
         static double CupsPurchased;
+        public double pitcherForGame;
 
         public double price;
         public int countPitchersMade = 0;
@@ -266,6 +267,7 @@ namespace LemonadeStand
                             player.inventory.iceCubes.RemoveRange(0, player.recipe.amountOfIceCubes);
 
                         countPitchersMade++;
+                        pitcherForGame++;
                         //might need to add count for pitcher or cups of lemonade
                     }
                 }

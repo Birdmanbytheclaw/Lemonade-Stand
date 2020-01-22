@@ -42,14 +42,14 @@ namespace LemonadeStand
         {
             for(int i = 0; i < day.customers.Count; i++)
             {
-                if ((store.countPitchersMade > 0) && (player.pitcher.cupsLeftInPitcher > 0))
+                if ((store.pitcherForGame > 0) && (player.pitcher.cupsLeftInPitcher > 0))
                 {
                     player.wallet.Money += .25;
                     player.inventory.cups.RemoveAt(i);
                     player.pitcher.cupsLeftInPitcher--;
                     if(player.pitcher.cupsLeftInPitcher == 0)
                     {
-                        store.countPitchersMade--;
+                        store.pitcherForGame--;
                     }
                     Console.WriteLine("You have " + UserInterface.PitchersToBeMade + "Pitcher(s) and " + player.pitcher.cupsLeftInPitcher + " cups left in Pitcher.");
                     
